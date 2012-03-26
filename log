@@ -1,0 +1,608 @@
+Apache Maven 3.0.3 (r1075438; 2011-02-28 18:31:09+0100)
+Maven home: C:\travail\outils\apache-maven-3.0.3\bin\..
+Java version: 1.6.0_18, vendor: Sun Microsystems Inc.
+Java home: C:\travail\java\jdk1.6.0_18\jre
+Default locale: fr_FR, platform encoding: Cp1252
+OS name: "windows 7", version: "6.1", arch: "x86", family: "windows"
+[INFO] Error stacktraces are turned on.
+[DEBUG] Reading global settings from C:\travail\outils\apache-maven-3.0.3\bin\..\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\Fabien\.m2\settings.xml
+[DEBUG] Using local repository at C:\travail\MAVEN2_REPO
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10 for C:\travail\MAVEN2_REPO
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project fr.ippon.tatami:tatami:war:1.0-SNAPSHOT: (none)
+[DEBUG] Looking up lifecyle mappings for packaging war from ClassRealm[plexus.core, parent: null]
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: fr.ippon.tatami:tatami:war:1.0-SNAPSHOT
+[DEBUG] Tasks:   [org.apache.tomcat.maven:tomcat7-maven-plugin:2.0-beta-1:run]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building tatami 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       fr.ippon.tatami:tatami:1.0-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [runtime]
+[DEBUG] Repositories (dependencies): [uk (http://uk.maven.org/maven2, releases)]
+[DEBUG] Repositories (plugins)     : [uk (http://uk.maven.org/maven2, releases)]
+[DEBUG] --- init fork of fr.ippon.tatami:tatami:1.0-SNAPSHOT for org.apache.tomcat.maven:tomcat7-maven-plugin:2.0-beta-1:run (default-cli) ---
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [compile, test]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-enforcer-plugin:1.0.1:enforce-once (enforce-versions)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <fail default-value="true">${enforcer.fail}</fail>
+  <failFast default-value="false">${enforcer.failFast}</failFast>
+  <ignoreCache default-value="false">${enforcer.ignoreCache}</ignoreCache>
+  <project>${project}</project>
+  <rules>
+    <requireMavenVersion>
+      <version>[3.0.0,)</version>
+    </requireMavenVersion>
+    <requireJavaVersion>
+      <version>[1.6.0,)</version>
+    </requireJavaVersion>
+  </rules>
+  <session>${session}</session>
+  <skip default-value="false">${enforcer.skip}</skip>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:2.4.3:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <escapeString default-value="${maven.resources.escapeString}"/>
+  <escapeWindowsPaths default-value="true">${maven.resources.escapeWindowsPaths}</escapeWindowsPaths>
+  <includeEmptyDirs default-value="false">${maven.resources.includeEmptyDirs}</includeEmptyDirs>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false">${maven.resources.overwrite}</overwrite>
+  <project default-value="${project}"/>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:2.3.2:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <classpathElements default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <outputFileName>${project.build.finalName}</outputFileName>
+  <projectArtifact default-value="${project.artifact}"/>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <source default-value="1.5">1.6</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.5">1.6</target>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] --- exit fork of fr.ippon.tatami:tatami:1.0-SNAPSHOT for org.apache.tomcat.maven:tomcat7-maven-plugin:2.0-beta-1:run (default-cli) ---
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.tomcat.maven:tomcat7-maven-plugin:2.0-beta-1:run (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addContextWarDependencies default-value="false">${maven.tomcat.addContextWarDependencies}</addContextWarDependencies>
+  <addWarDependenciesInClassloader default-value="true">${maven.tomcat.addWarDependenciesInClassloader}</addWarDependenciesInClassloader>
+  <additionalConfigFilesDir default-value="${basedir}/src/main/tomcatconf">${maven.tomcat.additionalConfigFilesDir}</additionalConfigFilesDir>
+  <ajpPort default-value="0">${maven.tomcat.ajp.port}</ajpPort>
+  <ajpProtocol default-value="org.apache.coyote.ajp.AjpProtocol">${maven.tomcat.ajp.protocol}</ajpProtocol>
+  <backgroundProcessorDelay default-value="-1">${maven.tomcat.backgroundProcessorDelay}</backgroundProcessorDelay>
+  <configurationDir>${project.build.directory}/tomcat</configurationDir>
+  <contextFile>src/main/webapp/META-INF/context.xml</contextFile>
+  <contextReloadable default-value="false">${maven.tomcat.contextReloadable}</contextReloadable>
+  <delegate default-value="true">${tomcat.delegate}</delegate>
+  <dependencies default-value="${project.artifacts}"/>
+  <fork default-value="false">${maven.tomcat.fork}</fork>
+  <httpsPort default-value="0">${maven.tomcat.httpsPort}</httpsPort>
+  <ignorePackaging default-value="false">${tomcat.ignorePackaging}</ignorePackaging>
+  <packaging>${project.packaging}</packaging>
+  <path default-value="/${project.artifactId}">${maven.tomcat.path}</path>
+  <pluginArtifacts>${plugin.artifacts}</pluginArtifacts>
+  <port default-value="8080">${maven.tomcat.port}</port>
+  <project>${project}</project>
+  <protocol default-value="HTTP/1.1">${maven.tomcat.protocol}</protocol>
+  <serverXml>${maven.tomcat.serverXml}</serverXml>
+  <tomcatLoggingFile>${maven.tomcat.tomcatLogging.file}</tomcatLoggingFile>
+  <tomcatUsers>${maven.tomcat.tomcatUsers.file}</tomcatUsers>
+  <tomcatWebXml>${maven.tomcat.webXml}</tomcatWebXml>
+  <uriEncoding default-value="ISO-8859-1">${maven.tomcat.uriEncoding}</uriEncoding>
+  <useNaming default-value="true">${maven.tomcat.useNaming}</useNaming>
+  <useSeparateTomcatClassLoader default-value="false">${tomcat.useSeparateTomcatClassLoader}</useSeparateTomcatClassLoader>
+  <useTestClasspath default-value="false">${maven.tomcat.useTestClasspath}</useTestClasspath>
+  <warSourceDirectory default-value="${basedir}/src/main/webapp">${tomcat.warSourceDirectory}</warSourceDirectory>
+</configuration>
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] >>> tomcat7-maven-plugin:2.0-beta-1:run (default-cli) @ tatami >>>
+[DEBUG] fr.ippon.tatami:tatami:war:1.0-SNAPSHOT
+[DEBUG]    org.apache.httpcomponents:httpcore:jar:4.1:compile
+[DEBUG]    junit:junit:jar:4.9:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.1:test
+[DEBUG]    me.prettyprint:hector-core:jar:1.0-3:compile
+[DEBUG]       commons-pool:commons-pool:jar:1.5.3:compile
+[DEBUG]       org.apache.cassandra:cassandra-thrift:jar:1.0.6:compile
+[DEBUG]          org.apache.thrift:libthrift:jar:0.6.1:compile
+[DEBUG]             org.apache.httpcomponents:httpclient:jar:4.0.1:compile
+[DEBUG]       com.google.guava:guava:jar:r09:compile
+[DEBUG]       com.github.stephenc.eaio-uuid:uuid:jar:3.2.0:compile
+[DEBUG]       com.ecyrd.speed4j:speed4j:jar:0.9:compile
+[DEBUG]    javax.inject:javax.inject:jar:1:compile
+[DEBUG]    javax.persistence:persistence-api:jar:1.0.2:compile
+[DEBUG]    me.prettyprint:hector-object-mapper:jar:1.1-01:compile
+[DEBUG]       org.apache.openjpa:openjpa-persistence:jar:2.1.0:compile
+[DEBUG]          org.apache.geronimo.specs:geronimo-jpa_2.0_spec:jar:1.1:compile
+[DEBUG]    net.sf.ehcache:ehcache-core:jar:2.5.1:compile
+[DEBUG]    org.slf4j:slf4j-api:jar:1.6.4:compile
+[DEBUG]    org.slf4j:slf4j-log4j12:jar:1.6.4:compile
+[DEBUG]       log4j:log4j:jar:1.2.16:compile
+[DEBUG]    org.springframework:spring-context:jar:3.1.1.RELEASE:compile
+[DEBUG]       org.springframework:spring-beans:jar:3.1.1.RELEASE:compile
+[DEBUG]       org.springframework:spring-core:jar:3.1.1.RELEASE:compile
+[DEBUG]          commons-logging:commons-logging:jar:1.1.1:compile
+[DEBUG]       org.springframework:spring-expression:jar:3.1.1.RELEASE:compile
+[DEBUG]       org.springframework:spring-asm:jar:3.1.1.RELEASE:compile
+[DEBUG]    cglib:cglib:jar:2.2:compile
+[DEBUG]       asm:asm:jar:3.1:compile
+[DEBUG]    org.apache.tomcat:tomcat-servlet-api:jar:7.0.25:provided
+[DEBUG]    jstl:jstl:jar:1.2:compile
+[DEBUG]    org.aspectj:aspectjrt:jar:1.6.11:compile
+[DEBUG]    org.aspectj:aspectjweaver:jar:1.6.11:compile
+[DEBUG]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.5:compile
+[DEBUG]    org.codehaus.jackson:jackson-core-asl:jar:1.9.5:compile
+[DEBUG]    joda-time:joda-time:jar:2.1:compile
+[DEBUG]    org.springframework:spring-aop:jar:3.1.1.RELEASE:compile
+[DEBUG]       aopalliance:aopalliance:jar:1.0:compile
+[DEBUG]    org.springframework:spring-orm:jar:3.1.1.RELEASE:compile
+[DEBUG]       org.springframework:spring-jdbc:jar:3.1.1.RELEASE:compile
+[DEBUG]       org.springframework:spring-tx:jar:3.1.1.RELEASE:compile
+[DEBUG]    org.springframework:spring-webmvc:jar:3.1.1.RELEASE:compile
+[DEBUG]       org.springframework:spring-context-support:jar:3.1.1.RELEASE:compile
+[DEBUG]       org.springframework:spring-web:jar:3.1.1.RELEASE:compile
+[DEBUG]    org.springframework:spring-test:jar:3.1.1.RELEASE:test
+[DEBUG]    org.springframework.security:spring-security-core:jar:3.1.0.RELEASE:compile
+[DEBUG]       org.springframework.security:spring-security-crypto:jar:3.1.0.RELEASE:compile
+[DEBUG]    org.springframework.security:spring-security-config:jar:3.1.0.RELEASE:compile
+[DEBUG]    org.springframework.security:spring-security-web:jar:3.1.0.RELEASE:compile
+[DEBUG]    org.springframework.security:spring-security-taglibs:jar:3.1.0.RELEASE:compile
+[DEBUG]       org.springframework.security:spring-security-acl:jar:3.1.0.RELEASE:compile
+[DEBUG]    commons-lang:commons-lang:jar:2.6:compile
+[DEBUG]    org.cassandraunit:cassandra-unit:jar:1.0.3.1:test
+[DEBUG]       org.hamcrest:hamcrest-all:jar:1.1:test
+[DEBUG]       org.apache.cassandra:cassandra-all:jar:1.0.6:compile
+[DEBUG]          org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[DEBUG]          com.ning:compress-lzf:jar:0.8.4:compile
+[DEBUG]          commons-codec:commons-codec:jar:1.2:compile
+[DEBUG]          com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.2:compile
+[DEBUG]          org.antlr:antlr:jar:3.2:compile
+[DEBUG]             org.antlr:antlr-runtime:jar:3.2:compile
+[DEBUG]                org.antlr:stringtemplate:jar:3.2:compile
+[DEBUG]                   antlr:antlr:jar:2.7.7:compile
+[DEBUG]          org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[DEBUG]             org.mortbay.jetty:jetty:jar:6.1.22:compile
+[DEBUG]                org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[DEBUG]          jline:jline:jar:0.9.94:compile
+[DEBUG]          com.googlecode.json-simple:json-simple:jar:1.1:compile
+[DEBUG]          com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[DEBUG]          com.github.stephenc:jamm:jar:0.2.5:compile
+[DEBUG]       com.sun.xml.bind:jaxb-impl:jar:2.2.4-1:test
+[DEBUG]          javax.xml.bind:jaxb-api:jar:2.2.3:test
+[DEBUG]             javax.xml.stream:stax-api:jar:1.0-2:test
+[DEBUG]             javax.activation:activation:jar:1.1:test
+[DEBUG]       org.yaml:snakeyaml:jar:1.9:compile
+[DEBUG]       commons-cli:commons-cli:jar:1.2:compile
+[DEBUG]    org.mockito:mockito-all:jar:1.9.0:test
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce-once (enforce-versions) @ tatami ---
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.transfer < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.metadata < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.collection < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.version < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.artifact < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.spi < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.graph < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.impl < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.deployment < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.installation < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.resolution < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG] Populating class realm maven.api
+[DEBUG] org.apache.maven.plugins:maven-enforcer-plugin:jar:1.0.1:
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.9:compile
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.9:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-model:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-artifact-manager:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.0.9:compile
+[DEBUG]       org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]          junit:junit:jar:3.8.2:test (scope managed from compile) (version managed from 3.8.1)
+[DEBUG]    org.apache.maven:maven-core:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile
+[DEBUG]       org.apache.maven.reporting:maven-reporting-api:jar:2.0.9:compile
+[DEBUG]          org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-10:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile
+[DEBUG]       commons-cli:commons-cli:jar:1.0:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile
+[DEBUG]       org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[DEBUG]       org.apache.maven:maven-monitor:jar:2.0.9:compile
+[DEBUG]       classworlds:classworlds:jar:1.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:1.5.8:compile
+[DEBUG]    commons-lang:commons-lang:jar:2.3:compile
+[DEBUG]    org.apache.maven.enforcer:enforcer-api:jar:1.0.1:compile
+[DEBUG]    org.apache.maven.enforcer:enforcer-rules:jar:1.0.1:compile
+[DEBUG]       org.apache.maven.shared:maven-common-artifact-filters:jar:1.2:compile
+[DEBUG]          org.apache.maven.shared:maven-plugin-testing-harness:jar:1.1:test (scope managed from compile)
+[DEBUG]             org.codehaus.plexus:plexus-archiver:jar:1.0-alpha-7:test
+[DEBUG]       org.beanshell:bsh:jar:2.0b4:compile
+[DEBUG]       org.apache.maven.shared:maven-dependency-tree:jar:1.2:compile
+[DEBUG]       org.codehaus.plexus:plexus-i18n:jar:1.0-beta-6:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-enforcer-plugin:1.0.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-enforcer-plugin:1.0.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-enforcer-plugin:1.0.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-enforcer-plugin:jar:1.0.1
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.0.9
+[DEBUG]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-10
+[DEBUG]   Included: commons-cli:commons-cli:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:1.5.8
+[DEBUG]   Included: commons-lang:commons-lang:jar:2.3
+[DEBUG]   Included: org.apache.maven.enforcer:enforcer-api:jar:1.0.1
+[DEBUG]   Included: org.apache.maven.enforcer:enforcer-rules:jar:1.0.1
+[DEBUG]   Included: org.apache.maven.shared:maven-common-artifact-filters:jar:1.2
+[DEBUG]   Included: org.beanshell:bsh:jar:2.0b4
+[DEBUG]   Included: org.apache.maven.shared:maven-dependency-tree:jar:1.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-i18n:jar:1.0-beta-6
+[DEBUG]   Excluded: org.apache.maven:maven-artifact:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-api:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-project:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-settings:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-profile:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-model:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-artifact-manager:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-registry:jar:2.0.9
+[DEBUG]   Excluded: org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1
+[DEBUG]   Excluded: junit:junit:jar:3.8.2
+[DEBUG]   Excluded: org.apache.maven:maven-core:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-repository-metadata:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-error-diagnostics:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-descriptor:jar:2.0.9
+[DEBUG]   Excluded: org.apache.maven:maven-monitor:jar:2.0.9
+[DEBUG]   Excluded: classworlds:classworlds:jar:1.1
+[DEBUG]   Excluded: org.apache.maven.shared:maven-plugin-testing-harness:jar:1.1
+[DEBUG]   Excluded: org.codehaus.plexus:plexus-archiver:jar:1.0-alpha-7
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-enforcer-plugin:1.0.1:enforce-once from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-enforcer-plugin:1.0.1, parent: sun.misc.Launcher$AppClassLoader@11b86e7]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-enforcer-plugin:1.0.1:enforce-once' with basic configurator -->
+[DEBUG]   (s) fail = true
+[DEBUG]   (s) failFast = false
+[DEBUG]   (f) ignoreCache = false
+[DEBUG]   (s) project = MavenProject: fr.ippon.tatami:tatami:1.0-SNAPSHOT @ C:\travail\workspaces_sts_2.8.1\tatami\tatami\pom.xml
+[DEBUG]   (s) version = [3.0.0,)
+[DEBUG]   (s) version = [1.6.0,)
+[DEBUG]   (s) rules = [org.apache.maven.plugins.enforcer.RequireMavenVersion@178aae1, org.apache.maven.plugins.enforcer.RequireJavaVersion@11abd68]
+[DEBUG]   (s) session = org.apache.maven.execution.MavenSession@16d3536
+[DEBUG]   (s) skip = false
+[DEBUG] -- end configuration --
+[WARNING] enforcer:enforce-once is deprecated. Use enforcer:enforce instead. See MENFORCER-11/MENFORCER-12 for more information.
+[DEBUG] Executing rule: org.apache.maven.plugins.enforcer.RequireMavenVersion
+[DEBUG] Rule org.apache.maven.plugins.enforcer.RequireMavenVersion is cacheable.
+[DEBUG] Detected Maven Version: 3.0.3
+[DEBUG] Detected Maven Version: 3.0.3 is allowed in the range [3.0.0,).
+[DEBUG] Executing rule: org.apache.maven.plugins.enforcer.RequireJavaVersion
+[DEBUG] Rule org.apache.maven.plugins.enforcer.RequireJavaVersion is cacheable.
+[DEBUG] Detected Java String: 1.6.0_18
+[DEBUG] Normalized Java String: 1.6.0-18
+[DEBUG] Parsed Version: Major: 1 Minor: 6 Incremental: 0 Build: 18 Qualifier: null
+[DEBUG] Detected JDK Version: 1.6.0-18 is allowed in the range [1.6.0,).
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ tatami ---
+[DEBUG] org.apache.maven.plugins:maven-resources-plugin:jar:2.4.3:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-core:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6:compile
+[DEBUG]       org.apache.maven.reporting:maven-reporting-api:jar:2.0.6:compile
+[DEBUG]          org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-error-diagnostics:jar:2.0.6:compile
+[DEBUG]       commons-cli:commons-cli:jar:1.0:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.6:compile
+[DEBUG]       org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[DEBUG]       classworlds:classworlds:jar:1.1:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-settings:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-model:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-monitor:jar:2.0.6:compile
+[DEBUG]    org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]       junit:junit:jar:3.8.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:2.0.5:compile
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:1.0-beta-4:compile
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.4:compile
+[DEBUG]    org.codehaus.plexus:plexus-interpolation:jar:1.13:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.4.3
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.4.3
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.4.3
+[DEBUG]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:2.4.3
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.0.6
+[DEBUG]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7
+[DEBUG]   Included: commons-cli:commons-cli:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4
+[DEBUG]   Included: junit:junit:jar:3.8.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.5
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:1.0-beta-4
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.13
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-api:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-project:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-profile:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-artifact-manager:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-registry:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-core:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-repository-metadata:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-error-diagnostics:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-descriptor:jar:2.0.6
+[DEBUG]   Excluded: classworlds:classworlds:jar:1.1
+[DEBUG]   Excluded: org.apache.maven:maven-artifact:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-settings:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-model:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-monitor:jar:2.0.6
+[DEBUG]   Excluded: org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:2.4.3:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:2.4.3, parent: sun.misc.Launcher$AppClassLoader@11b86e7]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:2.4.3:resources' with basic configurator -->
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: fr.ippon.tatami:tatami:1.0-SNAPSHOT @ C:\travail\workspaces_sts_2.8.1\tatami\tatami\pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: C:\travail\workspaces_sts_2.8.1\tatami\tatami\src\main\resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@16d3536
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = true
+[DEBUG] -- end configuration --
+[DEBUG] properties used {java.vendor=Sun Microsystems Inc., env.SYSTEMROOT=C:\Windows, sun.java.launcher=SUN_STANDARD, env.TVT=C:\Program Files (x86)\Lenovo, sun.management.compiler=HotSpot Client Compiler, env.PROMPT=$P$G, os.name=Windows 7, env.FP_NO_HOST_CHECK=NO, sun.boot.class.path=C:\travail\java\jdk1.6.0_18\jre\lib\resources.jar;C:\travail\java\jdk1.6.0_18\jre\lib\rt.jar;C:\travail\java\jdk1.6.0_18\jre\lib\sunrsasign.jar;C:\travail\java\jdk1.6.0_18\jre\lib\jsse.jar;C:\travail\java\jdk1.6.0_18\jre\lib\jce.jar;C:\travail\java\jdk1.6.0_18\jre\lib\charsets.jar;C:\travail\java\jdk1.6.0_18\jre\classes, env.COMPUTERNAME=INGE30-THINK, env.ALLUSERSPROFILE=C:\ProgramData, sun.desktop=windows, java.vm.specification.vendor=Sun Microsystems Inc., java.runtime.version=1.6.0_18-b07, env.HOMEPATH=\Users\Fabien, project.build.sourceEncoding=UTF-8, env.TFS_DIR=C:\Program Files\ThinkVantage Fingerprint Software\, user.name=Fabien, env.SWSHARE=C:\SWSHARE, env.QTJAVA=C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip, env.PATH=C:\travail\outils\apache-maven-3.0.3\bin;C:\travail\java\jdk1.6.0_18\bin;C:\travail\outils\apache-maven-2.2.1\bin;C:\travail\java\jdk1.6.0_18\bin;C:\products\oraclexe\app\oracle\product\10.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files (x86)\Common Files\Lenovo;C:\Program Files (x86)\Common Files\Ulead Systems\MPEG;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files\Common Files\Lenovo;C:\Program Files (x86)\Lenovo\Client Security Solution;C:\Program Files\Lenovo\Client Security Solution;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\travail\outils\script;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\WinMerge;C:\travail\outils\strawberryperl\c\bin;C:\travail\outils\strawberryperl\perl\site\bin;C:\travail\outils\strawberryperl\perl\bin;C:\travail\outils\Git\cmd;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Graphviz 2.28\bin, user.language=fr, env.WINDIR=C:\Windows, sun.boot.library.path=C:\travail\java\jdk1.6.0_18\jre\bin, classworlds.conf=C:\travail\outils\apache-maven-3.0.3\bin\..\bin\m2.conf, java.version=1.6.0_18, env.PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 5, GenuineIntel, user.timezone=Europe/Paris, env.TSMPATH=C:\Program Files\ThinkPad\UltraNav Utility, env.TEMP=C:\Users\Fabien\AppData\Local\Temp, sun.arch.data.model=32, java.endorsed.dirs=C:\travail\java\jdk1.6.0_18\jre\lib\endorsed, env.PROCESSOR_ARCHITEW6432=AMD64, sun.cpu.isalist=pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86, env.HOMEDRIVE=C:, sun.jnu.encoding=Cp1252, file.encoding.pkg=sun.io, env.SYSTEMDRIVE=C:, env.TVTPYDIR=C:\Program Files (x86)\Common Files\Lenovo\Python24, file.separator=\, java.specification.name=Java Platform API Specification, java.class.version=50.0, user.country=FR, java.home=C:\travail\java\jdk1.6.0_18\jre, env.APPDATA=C:\Users\Fabien\AppData\Roaming, env.CONFIGSETROOT=C:\Windows\ConfigSetRoot, env.PUBLIC=C:\Users\Public, java.vm.info=mixed mode, sharing, env.OS=Windows_NT, os.version=6.1, env.=::=::\, env.ACPATH=C:\Program Files (x86)\Lenovo\Access Connections\, path.separator=;, java.vm.version=16.0-b13, env.TVTCOMMON=C:\Program Files (x86)\Common Files\Lenovo, env.ASL.LOG=Destination=file, user.variant=, env.USERPROFILE=C:\Users\Fabien, env.JAVA_HOME=C:\travail\java\jdk1.6.0_18, java.awt.printerjob=sun.awt.windows.WPrinterJob, env.TERM=dumb, env.TMP=C:\Users\Fabien\AppData\Local\Temp, env.PROGRAMFILES=C:\Program Files (x86), sun.io.unicode.encoding=UnicodeLittle, awt.toolkit=sun.awt.windows.WToolkit, env.FTP_PASSIVE=1, user.home=C:\Users\Fabien, env.COMMONPROGRAMFILES=C:\Program Files (x86)\Common Files, env.=EXITCODE=00000001, env.SESSIONNAME=Console, aspectj.version=1.6.11, java.specification.vendor=Sun Microsystems Inc., env.CLASSPATH=.;C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip, env.M2_HOME=C:\travail\outils\apache-maven-3.0.3\bin\.., java.library.path=C:\travail\java\jdk1.6.0_18\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\travail\outils\apache-maven-3.0.3\bin;C:\travail\java\jdk1.6.0_18\bin;C:\travail\outils\apache-maven-2.2.1\bin;C:\travail\java\jdk1.6.0_18\bin;C:\products\oraclexe\app\oracle\product\10.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files (x86)\Common Files\Lenovo;C:\Program Files (x86)\Common Files\Ulead Systems\MPEG;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files\Common Files\Lenovo;C:\Program Files (x86)\Lenovo\Client Security Solution;C:\Program Files\Lenovo\Client Security Solution;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\travail\outils\script;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\WinMerge;C:\travail\outils\strawberryperl\c\bin;C:\travail\outils\strawberryperl\perl\site\bin;C:\travail\outils\strawberryperl\perl\bin;C:\travail\outils\Git\cmd;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Graphviz 2.28\bin, env.NUMBER_OF_PROCESSORS=4, java.vendor.url=http://java.sun.com/, env.COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files, env.PSMODULEPATH=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\, env.CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher, env.MAVEN_CMD_LINE_ARGS=org.apache.tomcat.maven:tomcat7-maven-plugin:2.0-beta-1:run -X, java.vm.vendor=Sun Microsystems Inc., maven.home=C:\travail\outils\apache-maven-3.0.3\bin\.., java.runtime.name=Java(TM) SE Runtime Environment, java.class.path=C:\travail\outils\apache-maven-3.0.3\bin\..\boot\plexus-classworlds-2.4.jar, env.PROGRAMW6432=C:\Program Files, env.PROGRAMFILES(X86)=C:\Program Files (x86), env.MAVEN_JAVA_EXE="C:\travail\java\jdk1.6.0_18\bin\java.exe", slf4j.version=1.6.4, spring.security.version=3.1.0.RELEASE, java.vm.specification.name=Java Virtual Machine Specification, env.LOGONSERVER=\\INGE30-THINK, java.vm.specification.version=1.0, env.PROCESSOR_ARCHITECTURE=x86, env.COMMONPROGRAMW6432=C:\Program Files\Common Files, sun.cpu.endian=little, sun.os.patch.level=Service Pack 1, env.HOME=C:\Users\Fabien, java.io.tmpdir=C:\Users\Fabien\AppData\Local\Temp\, env.PROCESSOR_REVISION=2505, env.VBOX_INSTALL_PATH=C:\Program Files\Oracle\VirtualBox3\, java.vendor.url.bug=http://java.sun.com/cgi-bin/bugreport.cgi, env.PROGRAMDATA=C:\ProgramData, env.COMSPEC=C:\Windows\system32\cmd.exe, os.arch=x86, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, java.ext.dirs=C:\travail\java\jdk1.6.0_18\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, user.dir=C:\travail\workspaces_sts_2.8.1\tatami\tatami, env.MAVEN_HOME=C:\travail\outils\apache-maven-3.0.3, env.LOCALAPPDATA=C:\Users\Fabien\AppData\Local, line.separator=
+, env.CLASSWORLDS_JAR="C:\travail\outils\apache-maven-3.0.3\bin\..\boot\plexus-classworlds-2.4.jar", java.vm.name=Java HotSpot(TM) Client VM, env.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, env.ERROR_CODE=0, env.USERNAME=Fabien, spring.version=3.1.1.RELEASE, file.encoding=Cp1252, env.RR=C:\Program Files (x86)\Lenovo\Rescue and Recovery, env.USERDOMAIN=inge30-THINK, java.specification.version=1.6, env.=C:=C:\travail\workspaces_sts_2.8.1\tatami\tatami, env.PROCESSOR_LEVEL=6}
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] resource with targetPath null
+directory C:\travail\workspaces_sts_2.8.1\tatami\tatami\src\main\resources
+excludes []
+includes []
+[DEBUG] ignoreDelta true
+[INFO] Copying 4 resources
+[DEBUG] file ehcache.xml has a filtered file extension
+[DEBUG] copy C:\travail\workspaces_sts_2.8.1\tatami\tatami\src\main\resources\ehcache.xml to C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes\ehcache.xml
+[DEBUG] file log4j.properties has a filtered file extension
+[DEBUG] copy C:\travail\workspaces_sts_2.8.1\tatami\tatami\src\main\resources\log4j.properties to C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes\log4j.properties
+[DEBUG] file applicationContext-security.xml has a filtered file extension
+[DEBUG] copy C:\travail\workspaces_sts_2.8.1\tatami\tatami\src\main\resources\META-INF\spring\applicationContext-security.xml to C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes\META-INF\spring\applicationContext-security.xml
+[DEBUG] file tatami.properties has a filtered file extension
+[DEBUG] copy C:\travail\workspaces_sts_2.8.1\tatami\tatami\src\main\resources\META-INF\tatami\tatami.properties to C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes\META-INF\tatami\tatami.properties
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ tatami ---
+[DEBUG] org.apache.maven.plugins:maven-compiler-plugin:jar:2.3.2:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-core:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-model:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-error-diagnostics:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-project:jar:2.0.6:compile
+[DEBUG]          org.apache.maven:maven-plugin-registry:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-monitor:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-toolchain:jar:1.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:2.0.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-api:jar:1.8.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-manager:jar:1.8.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-javac:jar:1.8.1:runtime
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2
+[DEBUG]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:2.3.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-api:jar:1.8.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:1.8.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:1.8.1
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-api:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-artifact:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-core:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-settings:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-profile:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-model:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-repository-metadata:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-error-diagnostics:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-project:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-registry:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-descriptor:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-artifact-manager:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-monitor:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-toolchain:jar:1.0
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:2.3.2:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2, parent: sun.misc.Launcher$AppClassLoader@11b86e7]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:2.3.2:compile' with basic configurator -->
+[DEBUG]   (f) basedir = C:\travail\workspaces_sts_2.8.1\tatami\tatami
+[DEBUG]   (f) buildDirectory = C:\travail\workspaces_sts_2.8.1\tatami\tatami\target
+[DEBUG]   (f) classpathElements = [C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes, C:\travail\MAVEN2_REPO\org\apache\httpcomponents\httpcore\4.1\httpcore-4.1.jar, C:\travail\MAVEN2_REPO\me\prettyprint\hector-core\1.0-3\hector-core-1.0-3.jar, C:\travail\MAVEN2_REPO\commons-pool\commons-pool\1.5.3\commons-pool-1.5.3.jar, C:\travail\MAVEN2_REPO\org\apache\cassandra\cassandra-thrift\1.0.6\cassandra-thrift-1.0.6.jar, C:\travail\MAVEN2_REPO\org\apache\thrift\libthrift\0.6.1\libthrift-0.6.1.jar, C:\travail\MAVEN2_REPO\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar, C:\travail\MAVEN2_REPO\com\google\guava\guava\r09\guava-r09.jar, C:\travail\MAVEN2_REPO\com\github\stephenc\eaio-uuid\uuid\3.2.0\uuid-3.2.0.jar, C:\travail\MAVEN2_REPO\com\ecyrd\speed4j\speed4j\0.9\speed4j-0.9.jar, C:\travail\MAVEN2_REPO\javax\inject\javax.inject\1\javax.inject-1.jar, C:\travail\MAVEN2_REPO\javax\persistence\persistence-api\1.0.2\persistence-api-1.0.2.jar, C:\travail\MAVEN2_REPO\me\prettyprint\hector-object-mapper\1.1-01\hector-object-mapper-1.1-01.jar, C:\travail\MAVEN2_REPO\org\apache\openjpa\openjpa-persistence\2.1.0\openjpa-persistence-2.1.0.jar, C:\travail\MAVEN2_REPO\org\apache\geronimo\specs\geronimo-jpa_2.0_spec\1.1\geronimo-jpa_2.0_spec-1.1.jar, C:\travail\MAVEN2_REPO\net\sf\ehcache\ehcache-core\2.5.1\ehcache-core-2.5.1.jar, C:\travail\MAVEN2_REPO\org\slf4j\slf4j-api\1.6.4\slf4j-api-1.6.4.jar, C:\travail\MAVEN2_REPO\org\slf4j\slf4j-log4j12\1.6.4\slf4j-log4j12-1.6.4.jar, C:\travail\MAVEN2_REPO\log4j\log4j\1.2.16\log4j-1.2.16.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-context\3.1.1.RELEASE\spring-context-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-beans\3.1.1.RELEASE\spring-beans-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-core\3.1.1.RELEASE\spring-core-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-expression\3.1.1.RELEASE\spring-expression-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-asm\3.1.1.RELEASE\spring-asm-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\cglib\cglib\2.2\cglib-2.2.jar, C:\travail\MAVEN2_REPO\asm\asm\3.1\asm-3.1.jar, C:\travail\MAVEN2_REPO\org\apache\tomcat\tomcat-servlet-api\7.0.25\tomcat-servlet-api-7.0.25.jar, C:\travail\MAVEN2_REPO\jstl\jstl\1.2\jstl-1.2.jar, C:\travail\MAVEN2_REPO\org\aspectj\aspectjrt\1.6.11\aspectjrt-1.6.11.jar, C:\travail\MAVEN2_REPO\org\aspectj\aspectjweaver\1.6.11\aspectjweaver-1.6.11.jar, C:\travail\MAVEN2_REPO\org\codehaus\jackson\jackson-mapper-asl\1.9.5\jackson-mapper-asl-1.9.5.jar, C:\travail\MAVEN2_REPO\org\codehaus\jackson\jackson-core-asl\1.9.5\jackson-core-asl-1.9.5.jar, C:\travail\MAVEN2_REPO\joda-time\joda-time\2.1\joda-time-2.1.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-aop\3.1.1.RELEASE\spring-aop-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\aopalliance\aopalliance\1.0\aopalliance-1.0.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-orm\3.1.1.RELEASE\spring-orm-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-jdbc\3.1.1.RELEASE\spring-jdbc-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-tx\3.1.1.RELEASE\spring-tx-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-webmvc\3.1.1.RELEASE\spring-webmvc-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-context-support\3.1.1.RELEASE\spring-context-support-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\spring-web\3.1.1.RELEASE\spring-web-3.1.1.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-core\3.1.0.RELEASE\spring-security-core-3.1.0.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-crypto\3.1.0.RELEASE\spring-security-crypto-3.1.0.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-config\3.1.0.RELEASE\spring-security-config-3.1.0.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-web\3.1.0.RELEASE\spring-security-web-3.1.0.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-taglibs\3.1.0.RELEASE\spring-security-taglibs-3.1.0.RELEASE.jar, C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-acl\3.1.0.RELEASE\spring-security-acl-3.1.0.RELEASE.jar, C:\travail\MAVEN2_REPO\commons-lang\commons-lang\2.6\commons-lang-2.6.jar, C:\travail\MAVEN2_REPO\org\apache\cassandra\cassandra-all\1.0.6\cassandra-all-1.0.6.jar, C:\travail\MAVEN2_REPO\org\xerial\snappy\snappy-java\1.0.4.1\snappy-java-1.0.4.1.jar, C:\travail\MAVEN2_REPO\com\ning\compress-lzf\0.8.4\compress-lzf-0.8.4.jar, C:\travail\MAVEN2_REPO\commons-codec\commons-codec\1.2\commons-codec-1.2.jar, C:\travail\MAVEN2_REPO\com\googlecode\concurrentlinkedhashmap\concurrentlinkedhashmap-lru\1.2\concurrentlinkedhashmap-lru-1.2.jar, C:\travail\MAVEN2_REPO\org\antlr\antlr\3.2\antlr-3.2.jar, C:\travail\MAVEN2_REPO\org\antlr\antlr-runtime\3.2\antlr-runtime-3.2.jar, C:\travail\MAVEN2_REPO\org\antlr\stringtemplate\3.2\stringtemplate-3.2.jar, C:\travail\MAVEN2_REPO\antlr\antlr\2.7.7\antlr-2.7.7.jar, C:\travail\MAVEN2_REPO\org\apache\cassandra\deps\avro\1.4.0-cassandra-1\avro-1.4.0-cassandra-1.jar, C:\travail\MAVEN2_REPO\org\mortbay\jetty\jetty\6.1.22\jetty-6.1.22.jar, C:\travail\MAVEN2_REPO\org\mortbay\jetty\jetty-util\6.1.22\jetty-util-6.1.22.jar, C:\travail\MAVEN2_REPO\jline\jline\0.9.94\jline-0.9.94.jar, C:\travail\MAVEN2_REPO\com\googlecode\json-simple\json-simple\1.1\json-simple-1.1.jar, C:\travail\MAVEN2_REPO\com\github\stephenc\high-scale-lib\high-scale-lib\1.1.2\high-scale-lib-1.1.2.jar, C:\travail\MAVEN2_REPO\com\github\stephenc\jamm\0.2.5\jamm-0.2.5.jar, C:\travail\MAVEN2_REPO\org\yaml\snakeyaml\1.9\snakeyaml-1.9.jar, C:\travail\MAVEN2_REPO\commons-cli\commons-cli\1.2\commons-cli-1.2.jar]
+[DEBUG]   (f) compileSourceRoots = [C:\travail\workspaces_sts_2.8.1\tatami\tatami\src\main\java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedSourcesDirectory = C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\generated-sources\annotations
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes
+[DEBUG]   (f) outputFileName = tatami
+[DEBUG]   (f) projectArtifact = fr.ippon.tatami:tatami:war:1.0-SNAPSHOT
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@16d3536
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = false
+[DEBUG]   (f) source = 1.6
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (f) target = 1.6
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Source directories: [C:\travail\workspaces_sts_2.8.1\tatami\tatami\src\main\java]
+[DEBUG] Classpath: [C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes
+ C:\travail\MAVEN2_REPO\org\apache\httpcomponents\httpcore\4.1\httpcore-4.1.jar
+ C:\travail\MAVEN2_REPO\me\prettyprint\hector-core\1.0-3\hector-core-1.0-3.jar
+ C:\travail\MAVEN2_REPO\commons-pool\commons-pool\1.5.3\commons-pool-1.5.3.jar
+ C:\travail\MAVEN2_REPO\org\apache\cassandra\cassandra-thrift\1.0.6\cassandra-thrift-1.0.6.jar
+ C:\travail\MAVEN2_REPO\org\apache\thrift\libthrift\0.6.1\libthrift-0.6.1.jar
+ C:\travail\MAVEN2_REPO\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+ C:\travail\MAVEN2_REPO\com\google\guava\guava\r09\guava-r09.jar
+ C:\travail\MAVEN2_REPO\com\github\stephenc\eaio-uuid\uuid\3.2.0\uuid-3.2.0.jar
+ C:\travail\MAVEN2_REPO\com\ecyrd\speed4j\speed4j\0.9\speed4j-0.9.jar
+ C:\travail\MAVEN2_REPO\javax\inject\javax.inject\1\javax.inject-1.jar
+ C:\travail\MAVEN2_REPO\javax\persistence\persistence-api\1.0.2\persistence-api-1.0.2.jar
+ C:\travail\MAVEN2_REPO\me\prettyprint\hector-object-mapper\1.1-01\hector-object-mapper-1.1-01.jar
+ C:\travail\MAVEN2_REPO\org\apache\openjpa\openjpa-persistence\2.1.0\openjpa-persistence-2.1.0.jar
+ C:\travail\MAVEN2_REPO\org\apache\geronimo\specs\geronimo-jpa_2.0_spec\1.1\geronimo-jpa_2.0_spec-1.1.jar
+ C:\travail\MAVEN2_REPO\net\sf\ehcache\ehcache-core\2.5.1\ehcache-core-2.5.1.jar
+ C:\travail\MAVEN2_REPO\org\slf4j\slf4j-api\1.6.4\slf4j-api-1.6.4.jar
+ C:\travail\MAVEN2_REPO\org\slf4j\slf4j-log4j12\1.6.4\slf4j-log4j12-1.6.4.jar
+ C:\travail\MAVEN2_REPO\log4j\log4j\1.2.16\log4j-1.2.16.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-context\3.1.1.RELEASE\spring-context-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-beans\3.1.1.RELEASE\spring-beans-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-core\3.1.1.RELEASE\spring-core-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-expression\3.1.1.RELEASE\spring-expression-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-asm\3.1.1.RELEASE\spring-asm-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\cglib\cglib\2.2\cglib-2.2.jar
+ C:\travail\MAVEN2_REPO\asm\asm\3.1\asm-3.1.jar
+ C:\travail\MAVEN2_REPO\org\apache\tomcat\tomcat-servlet-api\7.0.25\tomcat-servlet-api-7.0.25.jar
+ C:\travail\MAVEN2_REPO\jstl\jstl\1.2\jstl-1.2.jar
+ C:\travail\MAVEN2_REPO\org\aspectj\aspectjrt\1.6.11\aspectjrt-1.6.11.jar
+ C:\travail\MAVEN2_REPO\org\aspectj\aspectjweaver\1.6.11\aspectjweaver-1.6.11.jar
+ C:\travail\MAVEN2_REPO\org\codehaus\jackson\jackson-mapper-asl\1.9.5\jackson-mapper-asl-1.9.5.jar
+ C:\travail\MAVEN2_REPO\org\codehaus\jackson\jackson-core-asl\1.9.5\jackson-core-asl-1.9.5.jar
+ C:\travail\MAVEN2_REPO\joda-time\joda-time\2.1\joda-time-2.1.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-aop\3.1.1.RELEASE\spring-aop-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\aopalliance\aopalliance\1.0\aopalliance-1.0.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-orm\3.1.1.RELEASE\spring-orm-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-jdbc\3.1.1.RELEASE\spring-jdbc-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-tx\3.1.1.RELEASE\spring-tx-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-webmvc\3.1.1.RELEASE\spring-webmvc-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-context-support\3.1.1.RELEASE\spring-context-support-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\spring-web\3.1.1.RELEASE\spring-web-3.1.1.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-core\3.1.0.RELEASE\spring-security-core-3.1.0.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-crypto\3.1.0.RELEASE\spring-security-crypto-3.1.0.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-config\3.1.0.RELEASE\spring-security-config-3.1.0.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-web\3.1.0.RELEASE\spring-security-web-3.1.0.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-taglibs\3.1.0.RELEASE\spring-security-taglibs-3.1.0.RELEASE.jar
+ C:\travail\MAVEN2_REPO\org\springframework\security\spring-security-acl\3.1.0.RELEASE\spring-security-acl-3.1.0.RELEASE.jar
+ C:\travail\MAVEN2_REPO\commons-lang\commons-lang\2.6\commons-lang-2.6.jar
+ C:\travail\MAVEN2_REPO\org\apache\cassandra\cassandra-all\1.0.6\cassandra-all-1.0.6.jar
+ C:\travail\MAVEN2_REPO\org\xerial\snappy\snappy-java\1.0.4.1\snappy-java-1.0.4.1.jar
+ C:\travail\MAVEN2_REPO\com\ning\compress-lzf\0.8.4\compress-lzf-0.8.4.jar
+ C:\travail\MAVEN2_REPO\commons-codec\commons-codec\1.2\commons-codec-1.2.jar
+ C:\travail\MAVEN2_REPO\com\googlecode\concurrentlinkedhashmap\concurrentlinkedhashmap-lru\1.2\concurrentlinkedhashmap-lru-1.2.jar
+ C:\travail\MAVEN2_REPO\org\antlr\antlr\3.2\antlr-3.2.jar
+ C:\travail\MAVEN2_REPO\org\antlr\antlr-runtime\3.2\antlr-runtime-3.2.jar
+ C:\travail\MAVEN2_REPO\org\antlr\stringtemplate\3.2\stringtemplate-3.2.jar
+ C:\travail\MAVEN2_REPO\antlr\antlr\2.7.7\antlr-2.7.7.jar
+ C:\travail\MAVEN2_REPO\org\apache\cassandra\deps\avro\1.4.0-cassandra-1\avro-1.4.0-cassandra-1.jar
+ C:\travail\MAVEN2_REPO\org\mortbay\jetty\jetty\6.1.22\jetty-6.1.22.jar
+ C:\travail\MAVEN2_REPO\org\mortbay\jetty\jetty-util\6.1.22\jetty-util-6.1.22.jar
+ C:\travail\MAVEN2_REPO\jline\jline\0.9.94\jline-0.9.94.jar
+ C:\travail\MAVEN2_REPO\com\googlecode\json-simple\json-simple\1.1\json-simple-1.1.jar
+ C:\travail\MAVEN2_REPO\com\github\stephenc\high-scale-lib\high-scale-lib\1.1.2\high-scale-lib-1.1.2.jar
+ C:\travail\MAVEN2_REPO\com\github\stephenc\jamm\0.2.5\jamm-0.2.5.jar
+ C:\travail\MAVEN2_REPO\org\yaml\snakeyaml\1.9\snakeyaml-1.9.jar
+ C:\travail\MAVEN2_REPO\commons-cli\commons-cli\1.2\commons-cli-1.2.jar]
+[DEBUG] Output directory: C:\travail\workspaces_sts_2.8.1\tatami\tatami\target\classes
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< tomcat7-maven-plugin:2.0-beta-1:run (default-cli) @ tatami <<<
+Terminer le programme de commandes (O/N)ÿ? 
+Terminer le programme de commandes (O/N)ÿ? 
