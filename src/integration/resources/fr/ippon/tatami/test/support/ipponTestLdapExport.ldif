@@ -29,3 +29,23 @@ cn: john_doe
 sn: john_doe
 uid: john_doe
 userPassword:: e1NIQX1wUjNhZkgvMUMySHE2Z1JFTng5S2FwTUI1UUU9
+
+dn: cn=userA,dc=ippon,dc=fr
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: userA
+sn: userA
+uid: userA
+userPassword:: e1NIQX1sK2lzNUhobFUya1BoTWh4V1pVMnZmSUIvZ289
+
+dn: cn=userB,dc=ippon,dc=fr
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: userB
+sn: userB
+uid: userB
+userPassword:: e1NIQX1sK2lzNUhobFUya1BoTWh4V1pVMnZmSUIvZ289
