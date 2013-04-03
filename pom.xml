@@ -380,6 +380,17 @@
             
             </dependencies>
         </profile>
+        <profile>
+            <id>tatami-bot-enabled</id>
+            <!-- !!! You have to activate one of the other previous profile manually in addition to this one !!! -->
+            <dependencies>
+                <dependency>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>tatami-bot</artifactId>
+                    <version>0.1</version>
+                </dependency>
+            </dependencies>
+        </profile>
     </profiles>
 
     <properties>
@@ -394,7 +405,7 @@
         <elasticsearch.version>0.19.10</elasticsearch.version>
         <aspectj.version>1.6.11</aspectj.version>
         <slf4j.version>1.5.8</slf4j.version>
-        <httpclient.core.version>4.1</httpclient.core.version>
+        <httpclient.core.version>4.2.2</httpclient.core.version>
         <hector.version>1.1-2</hector.version>
         <hector.mapper.version>3.1-07</hector.mapper.version>
         <persistence.api.version>1.0.2</persistence.api.version>
@@ -479,6 +490,11 @@
                     <artifactId>servlet-api</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
