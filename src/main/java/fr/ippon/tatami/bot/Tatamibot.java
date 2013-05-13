@@ -14,6 +14,7 @@ import fr.ippon.tatami.domain.Domain;
 import fr.ippon.tatami.repository.DomainRepository;
 import fr.ippon.tatami.repository.TatamibotConfigurationRepository;
 import fr.ippon.tatami.service.UserService;
+import fr.ippon.tatami.service.UserServiceIface;
 import fr.ippon.tatami.service.util.DomainUtil;
 
 import org.apache.camel.Exchange;
@@ -42,7 +43,6 @@ public class Tatamibot extends RouteBuilder {
 
     private static final Log log = LogFactory.getLog(Tatamibot.class);
 
-
     @Inject
     private IdempotentRepository<String> idempotentRepository;
 
@@ -53,7 +53,7 @@ public class Tatamibot extends RouteBuilder {
     private TatamibotConfigurationRepository tatamibotConfigurationRepository;
 
     @Inject
-    private UserService userService;
+    private UserServiceIface userService;
 
     @Override
     public void configure() {

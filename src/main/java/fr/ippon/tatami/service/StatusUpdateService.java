@@ -22,7 +22,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-public class StatusUpdateService {
+public class StatusUpdateService implements StatusUpdateServiceIface {
 
     private final Log log = LogFactory.getLog(StatusUpdateService.class);
 
@@ -99,18 +99,34 @@ public class StatusUpdateService {
     @Inject
     private StatusAttachmentRepository statusAttachmentRepository;
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.StatusUpdateServiceIface#postStatus(java.lang.String, boolean, java.util.Collection)
+     */
+    @Override
     public void postStatus(String content, boolean statusPrivate, Collection<String> attachmentIds) {
         createStatus(content, statusPrivate, null, "", "", "", attachmentIds, null);
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.StatusUpdateServiceIface#postStatusToGroup(java.lang.String, fr.ippon.tatami.domain.Group, java.util.Collection)
+     */
+    @Override
     public void postStatusToGroup(String content, Group group, Collection<String> attachmentIds) {
         createStatus(content, false, group, "", "", "", attachmentIds, null);
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.StatusUpdateServiceIface#postStatusAsUser(java.lang.String, fr.ippon.tatami.domain.User)
+     */
+    @Override
     public void postStatusAsUser(String content, User user) {
         createStatus(content, false, null, "", "", "", null, user);
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.StatusUpdateServiceIface#replyToStatus(java.lang.String, java.lang.String)
+     */
+    @Override
     public void replyToStatus(String content, String replyTo) throws ArchivedGroupException, ReplyStatusException {
         Status originalStatus = statusRepository.findStatusById(replyTo);
         if (originalStatus == null) {

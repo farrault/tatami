@@ -28,7 +28,7 @@ import java.util.List;
  * @author Julien Dubois
  */
 @Service
-public class UserService {
+public class UserService implements UserServiceIface {
 
     private final Log log = LogFactory.getLog(UserService.class);
 
@@ -80,14 +80,26 @@ public class UserService {
     @Inject
     Environment env;
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#getUserByLogin(java.lang.String)
+     */
+    @Override
     public User getUserByLogin(String login) {
         return userRepository.findUserByLogin(login);
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#getLoginByRssUid(java.lang.String)
+     */
+    @Override
     public String getLoginByRssUid(String rssUid) {
         return rssUidRepository.getLoginByRssUid(rssUid);
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#getUserByUsername(java.lang.String)
+     */
+    @Override
     public User getUserByUsername(String username) {
         User currentUser = authenticationService.getCurrentUser();
         String domain = DomainUtil.getDomainFromLogin(currentUser.getLogin());
@@ -95,12 +107,10 @@ public class UserService {
         return getUserByLogin(login);
     }
 
-    /**
-     * Return a collection of Users based on their username (ie : uid)
-     *
-     * @param logins the collection : must not be null
-     * @return a Collection of User
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#getUsersByLogin(java.util.Collection)
      */
+    @Override
     public Collection<User> getUsersByLogin(Collection<String> logins) {
         final Collection<User> users = new ArrayList<User>();
         User user;
@@ -113,6 +123,10 @@ public class UserService {
         return users;
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#getUsersForCurrentDomain(int)
+     */
+    @Override
     public List<User> getUsersForCurrentDomain(int pagination) {
         User currentUSer = authenticationService.getCurrentUser();
         String domain = DomainUtil.getDomainFromLogin(currentUSer.getLogin());
@@ -125,6 +139,10 @@ public class UserService {
         return users;
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#updateUser(fr.ippon.tatami.domain.User)
+     */
+    @Override
     public void updateUser(User user) {
         User currentUser = authenticationService.getCurrentUser();
         user.setLogin(currentUser.getLogin());
@@ -142,6 +160,10 @@ public class UserService {
         }
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#updatePassword(fr.ippon.tatami.domain.User)
+     */
+    @Override
     public void updatePassword(User user) {
         User currentUser = authenticationService.getCurrentUser();
         String password = user.getPassword();
@@ -159,6 +181,10 @@ public class UserService {
         }
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#updateThemePreferences(java.lang.String)
+     */
+    @Override
     public void updateThemePreferences(String theme) {
         User currentUser = authenticationService.getCurrentUser();
         currentUser.setTheme(theme);
@@ -173,6 +199,10 @@ public class UserService {
         }
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#updateEmailPreferences(boolean)
+     */
+    @Override
     public void updateEmailPreferences(boolean preferencesMentionEmail) {
         User currentUser = authenticationService.getCurrentUser();
         currentUser.setPreferencesMentionEmail(preferencesMentionEmail);
@@ -187,6 +217,10 @@ public class UserService {
         }
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#createUser(fr.ippon.tatami.domain.User)
+     */
+    @Override
     public void createUser(User user) {
         String login = user.getLogin();
 
@@ -229,6 +263,10 @@ public class UserService {
         }
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#createTatamibot(java.lang.String)
+     */
+    @Override
     public void createTatamibot(String domain) {
         String login = DomainUtil.getLoginFromUsernameAndDomain(Constants.TATAMIBOT_NAME, domain);
         User tatamiBotUser = new User();
@@ -243,6 +281,10 @@ public class UserService {
         }
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#deleteUser(fr.ippon.tatami.domain.User)
+     */
+    @Override
     public void deleteUser(User user) {
         // Unfollow this user
         Collection<String> followersIds = friendshipService.getFollowerIdsForUser(user.getLogin());
@@ -284,19 +326,28 @@ public class UserService {
         log.debug("User " + user.getLogin() + "has been successfully deleted !");
     }
 
-    /**
-     * Creates a User and sends a registration e-mail.
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#registerUser(fr.ippon.tatami.domain.User)
      */
+    @Override
     public void registerUser(User user) {
         String registrationKey = registrationRepository.generateRegistrationKey(user.getLogin());
         mailService.sendRegistrationEmail(registrationKey, user);
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#lostPassword(fr.ippon.tatami.domain.User)
+     */
+    @Override
     public void lostPassword(User user) {
         String registrationKey = registrationRepository.generateRegistrationKey(user.getLogin());
         mailService.sendLostPasswordEmail(registrationKey, user);
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#validateRegistration(java.lang.String)
+     */
+    @Override
     public String validateRegistration(String key) {
         if (log.isDebugEnabled()) {
             log.debug("Validating registration for key " + key);
@@ -328,9 +379,10 @@ public class UserService {
         return login;
     }
 
-    /**
-     * update registration to weekly digest email.
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#updateWeeklyDigestRegistration(boolean)
      */
+    @Override
     public void updateWeeklyDigestRegistration(boolean registration) {
         User currentUser = authenticationService.getCurrentUser();
         currentUser.setWeeklyDigestSubscription(registration);
@@ -355,9 +407,10 @@ public class UserService {
         }
     }
 
-    /**
-     * Update registration to daily digest email.
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#updateDailyDigestRegistration(boolean)
      */
+    @Override
     public void updateDailyDigestRegistration(boolean registration) {
         User currentUser = authenticationService.getCurrentUser();
         currentUser.setDailyDigestSubscription(registration);
@@ -382,11 +435,10 @@ public class UserService {
         }
     }
 
-    /**
-     * Activate of de-activate rss publication for the timeline.
-     *
-     * @return the rssUid used for rss publication, empty if no publication
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#updateRssTimelinePreferences(boolean)
      */
+    @Override
     public String updateRssTimelinePreferences(boolean booleanPreferencesRssTimeline) {
 
         User currentUser = authenticationService.getCurrentUser();
@@ -433,14 +485,19 @@ public class UserService {
         return rssUid;
     }
 
-    /**
-     * Is the domain managed by a LDAP repository?
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#isDomainHandledByLDAP(java.lang.String)
      */
+    @Override
     public boolean isDomainHandledByLDAP(String domain) {
         String domainHandledByLdap = env.getProperty("tatami.ldapauth.domain");
         return domain.equalsIgnoreCase(domainHandledByLdap);
     }
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#buildUserDTOList(java.util.Collection)
+     */
+    @Override
     public Collection<UserDTO> buildUserDTOList(Collection<User> users){
         User currentUser = authenticationService.getCurrentUser();
         Collection<String> currentFriendLogins = friendRepository.findFriendsForUser(currentUser.getLogin());
@@ -458,6 +515,10 @@ public class UserService {
         return userDTOs;
     };
 
+    /* (non-Javadoc)
+     * @see fr.ippon.tatami.service.UserServiceIface#buildUserDTO(fr.ippon.tatami.domain.User)
+     */
+    @Override
     public UserDTO buildUserDTO(User user){
         User currentUser = authenticationService.getCurrentUser();
         UserDTO userDTO = getUserDTOFromUser(user);

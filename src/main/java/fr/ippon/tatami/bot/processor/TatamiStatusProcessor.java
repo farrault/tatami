@@ -10,7 +10,9 @@ import org.springframework.stereotype.Component;
 
 import fr.ippon.tatami.domain.User;
 import fr.ippon.tatami.service.StatusUpdateService;
+import fr.ippon.tatami.service.StatusUpdateServiceIface;
 import fr.ippon.tatami.service.UserService;
+import fr.ippon.tatami.service.UserServiceIface;
 
 @Component
 public class TatamiStatusProcessor {
@@ -18,10 +20,10 @@ public class TatamiStatusProcessor {
     private final Log log = LogFactory.getLog(TatamiStatusProcessor.class);
 
     @Inject
-    private StatusUpdateService statusUpdateService;
+    private StatusUpdateServiceIface statusUpdateService;
 
     @Inject
-    private UserService userService;
+    private UserServiceIface userService;
 
     public void sendStatus(@Body String content, @Header("login") String login) throws Exception {
         
